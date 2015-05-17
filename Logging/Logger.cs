@@ -27,7 +27,7 @@ namespace Logging
 
         #region ///  Methods  ///
 
-        public void LoadXmlStackTrace(Exception ex)
+        private void LoadXmlStackTrace(Exception ex)
         {
             var xml = new ExceptionXElement(ex);
 

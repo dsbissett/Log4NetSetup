@@ -11,7 +11,7 @@ namespace Logging
         {
             get
             {
-                return base.ConnectionString;
+                return base.ConnectionString ?? ConfigurationManager.ConnectionStrings[LoggingConnectionString].ConnectionString;
             }
 
             set

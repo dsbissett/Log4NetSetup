@@ -58,12 +58,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>REM "$(SolutionDir)OutputLibrary\Logging"
-IF NOT EXIST "$(SolutionDir)OutputLibrary\Logging" mkdir "$(SolutionDir)OutputLibrary\Logging"
-if $(ConfigurationName) == Release copy "$(TargetDir)$(TargetFileName)" "$(SolutionDir)OutputLibrary\Logging\$(TargetFileName)"
-if $(ConfigurationName) == Release copy "$(TargetDir)log4net.dll" "$(SolutionDir)OutputLibrary\Logging\log4net.dll"
-if $(ConfigurationName) == Release copy "$(TargetDir)log4net.config" "$(SolutionDir)OutputLibrary\Logging\logging.config"
-</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
